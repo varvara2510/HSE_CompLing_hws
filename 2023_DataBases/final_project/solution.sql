@@ -1,33 +1,3 @@
---CRUD
--- Create 
--- добавления гостя
-INSERT INTO guests (first_name, last_name, email, telephone, country)
-VALUES ('Sam', 'Clafin', 'sam.claflin@gmail.com', '+1234567890', 'UK');
-
--- добавление номера
-INSERT INTO rooms (room_number, room_type, price_per_night, is_occupied)
-VALUES (106, 'Standard', 120.00, FALSE);
-
---добавление бронирования
-INSERT INTO bookings (guest_id, room_number, check_in_date, check_out_date)
-VALUES (6, 106, '2023-06-01', '2023-06-07');
-
--- Read
-SELECT * FROM guests;
-SELECT * FROM rooms;
-SELECT * FROM bookings;
-
--- Update
-UPDATE guests
-SET email = 'updated.email@example.com'
-WHERE guest_id = 1;
-
--- Delete
-DELETE FROM bookings
-WHERE guest_id = 4;
-
-
-
 -- Фильтрация
 SELECT * FROM rooms WHERE is_occupied = FALSE;
 SELECT * FROM guests WHERE telephone LIKE '123%';
@@ -79,6 +49,29 @@ GROUP BY g.country;
 
 -- Вызов процедуры для получения дат брони гостя
 CALL GetBookingInfo('John', 'Doe');
+
+
+-- Транзакция
+-- Добавление номера
+INSERT INTO rooms (room_number, room_type, price_per_night, is_occupied)
+VALUES (106, 'Standard', 120.00, FALSE);
+
+-- Начало транзакции
+START TRANSACTION;
+
+-- Добавление гостя
+INSERT INTO guests (first_name, last_name, email, telephone, country)
+VALUES ('John', 'Smith', 'john.smith@example.com', '123456789', 'USA');
+
+-- Бронирование номера для клиента
+INSERT INTO bookings (guest_id, room_number, check_in_date, check_out_date)
+VALUES (LAST_INSERT_ID(), 106, '2023-06-01', '2023-06-07');
+
+-- Коммит транзакции, если все операции успешны
+COMMIT;
+
+-- Откат транзакции, если хотя бы одна операция не удалась
+ROLLBACK;
 
 
 
