@@ -12,26 +12,26 @@ This project presents a database schema for a hotel, as well as a set of SQL que
 
 ```sql
 INSERT INTO guests (first_name, last_name, email, telephone, country)
-VALUES ('Sam', 'Clafin', 'sam.claflin@gmail.com', '+1234567890', 'UK');
+VALUES ('Sam', 'Clafin', 'sam.claflin@gmail.com', '+1234567890', 'UK');```
 
 ##### Adding a room
 
 ```sql
 INSERT INTO rooms (room_number, room_type, price_per_night, is_occupied)
-VALUES (106, 'Standard', 120.00, FALSE);
+VALUES (106, 'Standard', 120.00, FALSE);```
 
 ##### Adding a booking
 
 ```sql
 INSERT INTO bookings (guest_id, room_number, check_in_date, check_out_date)
-VALUES (6, 106, '2023-06-01', '2023-06-07');
+VALUES (6, 106, '2023-06-01', '2023-06-07');```
 
 ### Read
 
 ```sql
 SELECT * FROM guests;
 SELECT * FROM rooms;
-SELECT * FROM bookings;
+SELECT * FROM bookings;```
 
 ### Update
 
