@@ -1,1 +1,1 @@
-
+![Alt Text](./hotel.jpg)
