@@ -1,1 +1,1 @@
-![Alt Text](./hotel.jpg)
+![Alt Text](./hotel_db_schema.jpg)
