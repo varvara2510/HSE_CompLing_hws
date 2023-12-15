@@ -4,7 +4,7 @@ This project presents a database schema for a hotel, as well as a set of SQL que
 
 ## Schema
 
-![Database schema in entity-relation notation and Chen notation](./images/hotel_db_schema.jpg)
+![Database schema in entity-relation notation and Chen notation](./hotel_db_schema.jpg)
 
 ## CRUD 
 ### Create
