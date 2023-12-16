@@ -1,4 +1,5 @@
 -- Фильтрация
+
 SELECT * FROM rooms WHERE is_occupied = FALSE;
 SELECT * FROM guests WHERE telephone LIKE '123%';
 SELECT * FROM employees WHERE position = 'Receptionist';
