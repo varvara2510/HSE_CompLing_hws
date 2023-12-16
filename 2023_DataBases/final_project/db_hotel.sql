@@ -123,20 +123,6 @@ END //
 DELIMITER ;
 
 
--- Триггера для логирования изменений в таблице guests
-DELIMITER //
-
-CREATE TRIGGER log_guest_changes
-AFTER UPDATE ON guests
-FOR EACH ROW
-BEGIN
-    INSERT INTO guests_log (changed_guest_id, change_timestamp)
-    VALUES (NEW.guest_id, NOW());
-END //
-
-DELIMITER ;
-
-
 -- Хранимая процедура для подсчета общей суммы затрат на дополнительные услуги для определенного гостя
 DELIMITER //
 
