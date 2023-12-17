@@ -1,1 +1,1 @@
-Here are collected homeworks for the course "Neural network methods in text processing"
+Here are the homework assignments I completed for the "Neural network methods in text processing" course.
